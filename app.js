@@ -9,7 +9,7 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 const PORT = 5784;
-const ROOT_DIR = ["\\", "C:\\Publico\\facul", "C:\\Users\\tiago\\Dropbox\\facul", "C:\\Users\\tiago\\OneDrive\\facul", "C:\\Users\\tiago\\GoogleDrive\\facul",];
+const ROOT_DIR = ["C:\\Publico\\facul", "C:\\Users\\tiago\\Dropbox\\facul", "C:\\Users\\tiago\\OneDrive\\facul", "C:\\Users\\tiago\\GoogleDrive\\facul",];
 let numberRootDir = 0
 const upload = multer({ dest: 'uploads/' });
 const FILE_EXTENSION = ["txt", "bat", "js", "html", "css", "lnk", "docx"]
@@ -92,10 +92,10 @@ app.get('/*', (req, res, next) => {
     const fileExtension = path.extname(req.path).substring(1);
 
     const buttons = [
-        { name: 'Local', id: 1 },
-        { name: 'Dropbox', id: 2 },
-        { name: 'OneDrive', id: 3 },
-        { name: 'GoogleDrive', id: 4 }
+        { name: 'Local', id: 0 },
+        { name: 'Dropbox', id: 1 },
+        { name: 'OneDrive', id: 2 },
+        { name: 'GoogleDrive', id: 3 }
     ];
 
 
